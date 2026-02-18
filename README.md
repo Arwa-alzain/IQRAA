@@ -1,90 +1,74 @@
-# IQRAA Library Management System
+# 📚 IQRAA Library Management System
 
-**Implemented by:** Arwa Alzain
+**Team Member:** Arwa Alzain
 
-This project is a Library Management System called **IQRAA**, focusing on the **Books Management** and **Reports** modules for the Manager interface. It is built with **Java Swing** and connected to a relational database using **JDBC**.
-
----
-
-## 📚 Books Module
-
-The Books screen allows managers to fully manage the library’s book collection.
-
-### Features
-- **CRUD Operations**:
-  - **Add** new books
-  - **Update** existing books
-  - **Delete** books by BookID
-  - **Search** for specific books
-  - **Reset** to reload all books
-- **GUI Design**:
-  - Multi-panel layout using `AbsoluteLayout`
-  - JTable displays book details: `BookID`, `Title`, `Author`, `Genre`, `PublicationDate`, `Description`, `Availability`
-  - Scrollable table using `JScrollPane`
-- **Database Integration**:
-  - Connected via JDBC
-  - Methods to load and update book records dynamically
-
-### Validation & Exception Handling
-- Ensures numeric BookID and correct `yyyy-MM-dd` format for publication date
-- Handles:
-  - `SQLException` for database errors
-  - `NumberFormatException` for invalid numeric input
-  - `IllegalArgumentException` for invalid dates
-
-### Testing & Verification
-- Functional testing for all operations (Add, Update, Delete, Search, Reset)
-- Edge cases (empty fields, invalid formats)
-- Database consistency validation
-- UI updates and error message handling
+This project is a Library Management System called **IQRAA**, focusing on managing books, reports, and library users. The following sections describe my contributions to the **Books** and **Reports** modules.
 
 ---
 
-## 📊 Reports Module
+## 🛠️ Contribution Overview
 
-The Reports screen provides real-time library statistics.
-
-### Features
-- **Library Statistics**:
-  - Total books
-  - Borrowed books
-  - Available books
-- **Popular Books**:
-  - Top 3 most popular books displayed
-- **Member Statistics**:
-  - Total users
-  - Users with late returns
-  - Active users
-- **GUI Design**:
-  - Multi-panel layout with top, center, and bottom sections
-  - Labels dynamically updated from database queries
-
-### Exception Handling
-- Database connection issues
-- SQL syntax errors
-- Constraint violations
-- Invalid table/column references
-- Concurrency issues
-- Driver errors
-
-### Verification
-- Cross-checked statistics with database
-- Ensured all labels reflect accurate data in real time
+I was responsible for the design and implementation of the **Books** and **Reports** screens of the Library Management System.
 
 ---
 
-## ⚙️ Technologies Used
-- Java Swing (GUI)
-- JDBC (Database connectivity)
-- SQL (Database queries)
-- AbsoluteLayout for flexible panel design
+### 📖 Books Screen
+
+**🖼 Layout:**  
+- Main panel (`jPanel1`) using `AbsoluteLayout` with a light background.  
+- Left panel (`jPanel2`) with a dark background showing rights label and IQRAA logo.  
+- Labels (`jLabel3`–`jLabel9`) for **Book ID, Title, Author, Genre, Publication Date, Description, Availability**.  
+- Text fields (`jTextField1`–`jTextField8`) for input with placeholder borders.  
+- Buttons (`jButton2`–`jButton6`) for **Add ➕, Update ✏️, Delete 🗑️, Search 🔍, Reset 🔄**.  
+- `jTable1` inside `jScrollPane` to display all books dynamically.
+
+**💾 Database Interaction:**  
+- Connected via JDBC.  
+- Methods to **load, add, update, delete, and search** book records.  
+- `jTable1` refreshes automatically after each operation.
+
+**⚠️ Validation & Exception Handling:**  
+- Ensures BookID is numeric and PublicationDate is in `yyyy-MM-dd` format.  
+- Handles `SQLException`, `NumberFormatException`, and `IllegalArgumentException`.
+
+**🧪 Testing:**  
+- Functional testing for all CRUD operations.  
+- Edge cases: empty fields, incorrect formats, invalid data types.  
+- Database consistency verification.  
+- UI updates correctly with clear error messages.
 
 ---
 
-## 📝 Notes
-- Designed for library managers to efficiently manage books and track statistics
-- Handles invalid input and database exceptions gracefully
-- Tested extensively for UI consistency, database accuracy, and functional reliability
+### 📊 Reports Screen
+
+**🖼 Layout:**  
+- Main panel (`jPanel1`) using `AbsoluteLayout` with light background.  
+- Left panel (`jPanel2`), top header (`jPanel3`), center panel (`jPanel4`), bottom panel (`jPanel5`) with dark backgrounds.  
+- Labels for **library activities, popular books, and member statistics**.  
+- Navigation button to return to Manager Home Screen.
+
+**💾 Database Interaction:**  
+- Queries retrieve real-time statistics for:  
+  - Total books 📚, Borrowed books 📖, Available books ✅  
+  - Top 3 popular books 🌟  
+  - Number of users 👥, Late return users ⏰, Active users 🟢
+
+**⚠️ Validation & Exception Handling:**  
+- Handles database connection issues, SQL syntax errors, constraint violations, invalid operations, concurrency issues, and driver errors.
+
+**🧪 Testing:**  
+- Verified all numbers match database records.  
+- UI updates reflect database changes in real time.  
+- Checked layout and labels for clarity.
+
+---
+
+## 🛠 Technologies Used
+
+- Java Swing 🖥️  
+- JDBC 🔗  
+- SQL 🗄️  
+- AbsoluteLayout 📐  
 
 ---
 
